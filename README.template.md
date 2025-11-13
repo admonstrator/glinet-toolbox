@@ -1,15 +1,11 @@
 <div align="center">
 
-# 🧰 GL.iNet Toolbox
+<img src="./images/robbenlogo-glinet-small.webp" width="300" alt="GL.iNet Robben Logo" style="border-radius: 10px; margin: 20px 0;">
 
-![GL.iNet Logo](https://static.gl-inet.com/www/images/logo/gl-inet-logo-new.svg)
-
+## GL.iNet Toolbox
 **A comprehensive collection of tools and scripts for GL.iNet routers**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/Admonstrator/glinet-toolbox?style=social)](https://github.com/Admonstrator/glinet-toolbox/stargazers)
-[![Forum Moderator](https://img.shields.io/badge/GL.iNet-Forum%20Moderator-green)](https://forum.gl-inet.com/u/admon/)
-[![Community Projects](https://img.shields.io/badge/Community-Approved-brightgreen)](https://forum.gl-inet.com/u/admon/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub Stars](https://img.shields.io/github/stars/Admonstrator/glinet-toolbox?style=social)](https://github.com/Admonstrator/glinet-toolbox/stargazers) [![Forum Moderator](https://img.shields.io/badge/GL.iNet-Forum%20Moderator-green)](https://forum.gl-inet.com/u/admon/) [![Community Projects](https://img.shields.io/badge/Community-Approved-brightgreen)](https://forum.gl-inet.com/u/admon/)
 
 ---
 
@@ -18,6 +14,7 @@
 If you find these tools helpful and want to support their continued development:
 
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub-Sponsors-EA4AAA?style=for-the-badge&logo=github)](https://github.com/sponsors/admonstrator) [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/admon) [![Ko-fi](https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/admon) [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/aaronviehl)
+
 </div>
 
 ---
@@ -144,7 +141,6 @@ All tools support GL.iNet routers with firmware 4.x, including:
 | [Tailscale Updater](https://github.com/Admonstrator/glinet-tailscale-updater) | {{TAILSCALE_STARS}}⭐ | {{TAILSCALE_FORKS}}🍴 | {{TAILSCALE_RELEASE}} | ✅ Active |
 | [AdGuard Updater](https://github.com/Admonstrator/glinet-adguard-updater) | {{ADGUARD_STARS}}⭐ | {{ADGUARD_FORKS}}🍴 | {{ADGUARD_RELEASE}} | ✅ Active |
 | [ACME Manager](https://github.com/Admonstrator/glinet-enable-acme) | {{ACME_STARS}}⭐ | {{ACME_FORKS}}🍴 | - | ✅ Active |
-| [Forum Collection](https://github.com/Admonstrator/glinet.forum) | {{FORUM_STARS}}⭐ | {{FORUM_FORKS}}🍴 | - | ✅ Active |
 
 ### 🏆 Community Recognition
 
@@ -198,21 +194,6 @@ Special thanks to all contributors and testers from the GL.iNet forum community!
 
 ---
 
-## 💖 Support the Project
-
-If you find these tools helpful, consider supporting their development:
-
-<div align="center">
-
-[![GitHub Sponsors](https://img.shields.io/badge/GitHub-Sponsors-EA4AAA?style=for-the-badge&logo=github)](https://github.com/sponsors/admonstrator)
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/admon)
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/admon)
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/aaronviehl)
-
-</div>
-
----
-
 ## 📜 License
 
 All projects in the GL.iNet Toolbox are licensed under the **MIT License** – see individual repositories for details.
@@ -225,6 +206,23 @@ All projects in the GL.iNet Toolbox are licensed under the **MIT License** – s
 - 💬 [GL.iNet Forum](https://forum.gl-inet.com/)
 - 📖 [GL.iNet Documentation](https://docs.gl-inet.com/)
 - 👤 [My Forum Profile](https://forum.gl-inet.com/u/admon/)
+
+---
+
+## 🤝 Sponsors
+
+This project is proudly supported by:
+
+<div align="center">
+
+
+<img src="./images/termius-logo.webp" width="300" alt="GL.iNet Robben Logo" style="border-radius: 10px; margin: 20px 0;">
+
+**[Termius](https://termius.com/)** - The SSH client that works everywhere
+
+Termius provides powerful SSH client solutions for developers and system administrators. Perfect for managing your GL.iNet router and other infrastructure from anywhere.
+
+</div>
 
 ---
 
