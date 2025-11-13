@@ -7,6 +7,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub Stars](https://img.shields.io/github/stars/Admonstrator/glinet-toolbox?style=social)](https://github.com/Admonstrator/glinet-toolbox/stargazers) [![Forum Moderator](https://img.shields.io/badge/GL.iNet-Forum%20Moderator-green)](https://forum.gl-inet.com/u/admon/) [![Community Projects](https://img.shields.io/badge/Community-Approved-brightgreen)](https://forum.gl-inet.com/u/admon/)
 
+</div
+
 ---
 
 ## 💖 Support the Project

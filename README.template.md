@@ -7,11 +7,15 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub Stars](https://img.shields.io/github/stars/Admonstrator/glinet-toolbox?style=social)](https://github.com/Admonstrator/glinet-toolbox/stargazers) [![Forum Moderator](https://img.shields.io/badge/GL.iNet-Forum%20Moderator-green)](https://forum.gl-inet.com/u/admon/) [![Community Projects](https://img.shields.io/badge/Community-Approved-brightgreen)](https://forum.gl-inet.com/u/admon/)
 
+</div>
+
 ---
 
 ## 💖 Support the Project
 
 If you find these tools helpful and want to support their continued development:
+
+<div align="center">
 
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub-Sponsors-EA4AAA?style=for-the-badge&logo=github)](https://github.com/sponsors/admonstrator) [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/admon) [![Ko-fi](https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/admon) [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/aaronviehl)
 
