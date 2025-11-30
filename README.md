@@ -38,7 +38,7 @@ All tools are developed with the GL.iNet community in mind, tested on real hardw
 
 ### 🦭 [Tailscale Updater](https://github.com/Admonstrator/glinet-tailscale-updater)
 
-[![Stars](https://img.shields.io/badge/stars-373-brightgreen?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/stargazers) [![Forks](https://img.shields.io/badge/forks-34-blue?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/blob/main/LICENSE) [![Release](https://img.shields.io/badge/release-v1.90.9-blue?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/releases/latest)
+[![Stars](https://img.shields.io/badge/stars-375-brightgreen?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/stargazers) [![Forks](https://img.shields.io/badge/forks-34-blue?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/blob/main/LICENSE) [![Release](https://img.shields.io/badge/release-v1.90.9-blue?style=flat-square)](https://github.com/Admonstrator/glinet-tailscale-updater/releases/latest)
 
 Keep Tailscale up-to-date on your GL.iNet router with ease! This script automatically fetches and installs the latest Tailscale version, optimized specifically for GL.iNet routers.
 
@@ -142,14 +142,14 @@ All tools support GL.iNet routers with firmware 4.x, including:
 
 | Project | Stars | Forks | Latest Release | Status |
 |---------|-------|-------|----------------|--------|
-| [Tailscale Updater](https://github.com/Admonstrator/glinet-tailscale-updater) | 373⭐ | 34🍴 | v1.90.9 | ✅ Active |
+| [Tailscale Updater](https://github.com/Admonstrator/glinet-tailscale-updater) | 375⭐ | 34🍴 | v1.90.9 | ✅ Active |
 | [AdGuard Updater](https://github.com/Admonstrator/glinet-adguard-updater) | 72⭐ | 7🍴 | v0.107.69 | ✅ Active |
 | [ACME Manager](https://github.com/Admonstrator/glinet-enable-acme) | 16⭐ | 4🍴 | - | ✅ Active |
 
 ### 🏆 Community Recognition
 
 - 🎖️ **GL.iNet Forum Moderator** – Active community leader
-- ⭐ **461+ Combined GitHub Stars** – Trusted by the community
+- ⭐ **463+ Combined GitHub Stars** – Trusted by the community
 - 🔧 **9+ Active Contributors** – Growing open-source project
 - 📝 **Featured in Forum** – Multiple highlighted threads
 - 🌍 **Global Reach** – Used by GL.iNet users worldwide
@@ -219,6 +219,6 @@ All projects in the GL.iNet Toolbox are licensed under the **MIT License** – s
 
 ⭐ If you find this useful, please star the repositories!
 
-*Last updated: 2025-11-28*
+*Last updated: 2025-11-30*
 
 </div>
