@@ -46,6 +46,7 @@ jobs:
           get_repo_stats "glinet-adguard-updater"
           get_repo_stats "glinet-enable-acme"
           get_repo_stats "glinet.forum"
+          get_repo_stats "can-i-haz-reachability"
       
       - name: Generate README from template
         run: |
@@ -79,8 +80,12 @@ jobs:
           forum_forks="${{ steps.stats.outputs.glinet.forum_forks }}"
           forum_color=$(get_color $forum_stars)
           
+          reachability_stars="${{ steps.stats.outputs.can-i-haz-reachability_stars }}"
+          reachability_forks="${{ steps.stats.outputs.can-i-haz-reachability_forks }}"
+          reachability_color=$(get_color $reachability_stars)
+          
           # Calculate total stars
-          total_stars=$((ts_stars + ag_stars + acme_stars + forum_stars))
+          total_stars=$((ts_stars + ag_stars + acme_stars + forum_stars + reachability_stars))
           
           # Get current date
           update_date=$(date '+%Y-%m-%d')
@@ -106,6 +111,10 @@ jobs:
           sed -i "s/{{FORUM_STARS}}/$forum_stars/g" README.md
           sed -i "s/{{FORUM_FORKS}}/$forum_forks/g" README.md
           sed -i "s/{{FORUM_STARS_COLOR}}/$forum_color/g" README.md
+          
+          sed -i "s/{{REACHABILITY_STARS}}/$reachability_stars/g" README.md
+          sed -i "s/{{REACHABILITY_FORKS}}/$reachability_forks/g" README.md
+          sed -i "s/{{REACHABILITY_STARS_COLOR}}/$reachability_color/g" README.md
           
           sed -i "s/{{TOTAL_STARS}}/$total_stars/g" README.md
           sed -i "s/{{UPDATE_DATE}}/$update_date/g" README.md
@@ -151,6 +160,10 @@ jobs:
           echo "### Forum Collection" >> $GITHUB_STEP_SUMMARY
           echo "- ⭐ Stars: ${{ steps.stats.outputs.glinet.forum_stars }}" >> $GITHUB_STEP_SUMMARY
           echo "- 🍴 Forks: ${{ steps.stats.outputs.glinet.forum_forks }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Can I Haz Reachability?" >> $GITHUB_STEP_SUMMARY
+          echo "- ⭐ Stars: ${{ steps.stats.outputs.can-i-haz-reachability_stars }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 🍴 Forks: ${{ steps.stats.outputs.can-i-haz-reachability_forks }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
