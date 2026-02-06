@@ -98,7 +98,7 @@ jobs:
           
           # Helper function to escape sed special characters
           escape_sed() {
-            printf '%s\n' "$1" | sed 's/[&/\]/\\&/g'
+            printf '%s\n' "$1" | sed -e 's/\\/\\\\/g' -e 's/[\/&]/\\&/g'
           }
           
           # Escape all variables for safe sed replacement
