@@ -27,8 +27,9 @@ jobs:
             response=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               "https://api.github.com/repos/Admonstrator/$repo")
             
-            stars=$(echo "$response" | jq -r '.stargazers_count')
-            forks=$(echo "$response" | jq -r '.forks_count')
+            # Use 0 as default if the key is missing or null
+            stars=$(echo "$response" | jq -r 'if .stargazers_count == null then 0 else .stargazers_count end')
+            forks=$(echo "$response" | jq -r 'if .forks_count == null then 0 else .forks_count end')
             
             # Get latest release
             release_response=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
@@ -53,7 +54,7 @@ jobs:
         run: |
           # Helper function to create color based on count
           get_color() {
-            local count=$1
+            local count=${1:-0}
             if [ "$count" -ge 300 ]; then echo "brightgreen"
             elif [ "$count" -ge 100 ]; then echo "green"
             elif [ "$count" -ge 50 ]; then echo "yellowgreen"
@@ -61,36 +62,53 @@ jobs:
             else echo "orange"
             fi
           }
+
+          # Helper function to escape sed variables
+          escape_sed() {
+            echo "$1" | sed 's/[\/&]/\\&/g'
+          }
           
-          # Get all stats
+          # Get all stats with defaults
           ts_stars="${{ steps.stats.outputs.glinet-tailscale-updater_stars }}"
+          ts_stars=${ts_stars:-0}
           ts_forks="${{ steps.stats.outputs.glinet-tailscale-updater_forks }}"
-          ts_release="${{ steps.stats.outputs.glinet-tailscale-updater_release }}"
+          ts_forks=${ts_forks:-0}
+          ts_release=$(escape_sed "${{ steps.stats.outputs.glinet-tailscale-updater_release }}")
           ts_color=$(get_color $ts_stars)
           
           ag_stars="${{ steps.stats.outputs.glinet-adguard-updater_stars }}"
+          ag_stars=${ag_stars:-0}
           ag_forks="${{ steps.stats.outputs.glinet-adguard-updater_forks }}"
-          ag_release="${{ steps.stats.outputs.glinet-adguard-updater_release }}"
+          ag_forks=${ag_forks:-0}
+          ag_release=$(escape_sed "${{ steps.stats.outputs.glinet-adguard-updater_release }}")
           ag_color=$(get_color $ag_stars)
           
           acme_stars="${{ steps.stats.outputs.glinet-enable-acme_stars }}"
+          acme_stars=${acme_stars:-0}
           acme_forks="${{ steps.stats.outputs.glinet-enable-acme_forks }}"
+          acme_forks=${acme_forks:-0}
           acme_color=$(get_color $acme_stars)
           
           forum_stars="${{ steps.stats.outputs.glinet.forum_stars }}"
+          forum_stars=${forum_stars:-0}
           forum_forks="${{ steps.stats.outputs.glinet.forum_forks }}"
+          forum_forks=${forum_forks:-0}
           forum_color=$(get_color $forum_stars)
           
           reachability_stars="${{ steps.stats.outputs.can-i-haz-reachability_stars }}"
+          reachability_stars=${reachability_stars:-0}
           reachability_forks="${{ steps.stats.outputs.can-i-haz-reachability_forks }}"
+          reachability_forks=${reachability_forks:-0}
           reachability_color=$(get_color $reachability_stars)
           
           firmware_stars="${{ steps.stats.outputs.glinet-firmware-overview_stars }}"
+          firmware_stars=${firmware_stars:-0}
           firmware_forks="${{ steps.stats.outputs.glinet-firmware-overview_forks }}"
-          firmware_release="${{ steps.stats.outputs.glinet-firmware-overview_release }}"
+          firmware_forks=${firmware_forks:-0}
+          firmware_release=$(escape_sed "${{ steps.stats.outputs.glinet-firmware-overview_release }}")
           firmware_color=$(get_color $firmware_stars)
           
-          # Calculate total stars
+          # Calculate total stars safely
           total_stars=$((ts_stars + ag_stars + acme_stars + forum_stars + reachability_stars + firmware_stars))
           
           # Get current date
