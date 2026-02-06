@@ -62,32 +62,32 @@ jobs:
             fi
           }
           
-          # Get all stats
-          ts_stars="${{ steps.stats.outputs.glinet-tailscale-updater_stars }}"
-          ts_forks="${{ steps.stats.outputs.glinet-tailscale-updater_forks }}"
-          ts_release="${{ steps.stats.outputs.glinet-tailscale-updater_release }}"
+          # Get all stats with default values to prevent empty strings
+          ts_stars="${{ steps.stats.outputs.glinet-tailscale-updater_stars:-0 }}"
+          ts_forks="${{ steps.stats.outputs.glinet-tailscale-updater_forks:-0 }}"
+          ts_release="${{ steps.stats.outputs.glinet-tailscale-updater_release:-N/A }}"
           ts_color=$(get_color $ts_stars)
           
-          ag_stars="${{ steps.stats.outputs.glinet-adguard-updater_stars }}"
-          ag_forks="${{ steps.stats.outputs.glinet-adguard-updater_forks }}"
-          ag_release="${{ steps.stats.outputs.glinet-adguard-updater_release }}"
+          ag_stars="${{ steps.stats.outputs.glinet-adguard-updater_stars:-0 }}"
+          ag_forks="${{ steps.stats.outputs.glinet-adguard-updater_forks:-0 }}"
+          ag_release="${{ steps.stats.outputs.glinet-adguard-updater_release:-N/A }}"
           ag_color=$(get_color $ag_stars)
           
-          acme_stars="${{ steps.stats.outputs.glinet-enable-acme_stars }}"
-          acme_forks="${{ steps.stats.outputs.glinet-enable-acme_forks }}"
+          acme_stars="${{ steps.stats.outputs.glinet-enable-acme_stars:-0 }}"
+          acme_forks="${{ steps.stats.outputs.glinet-enable-acme_forks:-0 }}"
           acme_color=$(get_color $acme_stars)
           
-          forum_stars="${{ steps.stats.outputs.glinet.forum_stars }}"
-          forum_forks="${{ steps.stats.outputs.glinet.forum_forks }}"
+          forum_stars="${{ steps.stats.outputs.glinet.forum_stars:-0 }}"
+          forum_forks="${{ steps.stats.outputs.glinet.forum_forks:-0 }}"
           forum_color=$(get_color $forum_stars)
           
-          reachability_stars="${{ steps.stats.outputs.can-i-haz-reachability_stars }}"
-          reachability_forks="${{ steps.stats.outputs.can-i-haz-reachability_forks }}"
+          reachability_stars="${{ steps.stats.outputs.can-i-haz-reachability_stars:-0 }}"
+          reachability_forks="${{ steps.stats.outputs.can-i-haz-reachability_forks:-0 }}"
           reachability_color=$(get_color $reachability_stars)
           
-          firmware_stars="${{ steps.stats.outputs.glinet-firmware-overview_stars }}"
-          firmware_forks="${{ steps.stats.outputs.glinet-firmware-overview_forks }}"
-          firmware_release="${{ steps.stats.outputs.glinet-firmware-overview_release }}"
+          firmware_stars="${{ steps.stats.outputs.glinet-firmware-overview_stars:-0 }}"
+          firmware_forks="${{ steps.stats.outputs.glinet-firmware-overview_forks:-0 }}"
+          firmware_release="${{ steps.stats.outputs.glinet-firmware-overview_release:-N/A }}"
           firmware_color=$(get_color $firmware_stars)
           
           # Calculate total stars
@@ -96,39 +96,75 @@ jobs:
           # Get current date
           update_date=$(date '+%Y-%m-%d')
           
+          # Helper function to escape sed special characters
+          escape_sed() {
+            printf '%s\n' "$1" | sed 's/[&/\]/\\&/g'
+          }
+          
+          # Escape all variables for safe sed replacement
+          safe_ts_stars=$(escape_sed "$ts_stars")
+          safe_ts_forks=$(escape_sed "$ts_forks")
+          safe_ts_release=$(escape_sed "$ts_release")
+          safe_ts_color=$(escape_sed "$ts_color")
+          
+          safe_ag_stars=$(escape_sed "$ag_stars")
+          safe_ag_forks=$(escape_sed "$ag_forks")
+          safe_ag_release=$(escape_sed "$ag_release")
+          safe_ag_color=$(escape_sed "$ag_color")
+          
+          safe_acme_stars=$(escape_sed "$acme_stars")
+          safe_acme_forks=$(escape_sed "$acme_forks")
+          safe_acme_color=$(escape_sed "$acme_color")
+          
+          safe_forum_stars=$(escape_sed "$forum_stars")
+          safe_forum_forks=$(escape_sed "$forum_forks")
+          safe_forum_color=$(escape_sed "$forum_color")
+          
+          safe_reachability_stars=$(escape_sed "$reachability_stars")
+          safe_reachability_forks=$(escape_sed "$reachability_forks")
+          safe_reachability_color=$(escape_sed "$reachability_color")
+          
+          safe_firmware_stars=$(escape_sed "$firmware_stars")
+          safe_firmware_forks=$(escape_sed "$firmware_forks")
+          safe_firmware_release=$(escape_sed "$firmware_release")
+          safe_firmware_color=$(escape_sed "$firmware_color")
+          
+          safe_total_stars=$(escape_sed "$total_stars")
+          safe_update_date=$(escape_sed "$update_date")
+          
           # Copy template and replace placeholders
           cp README.template.md README.md
           
-          # Replace all placeholders
-          sed -i "s/{{TAILSCALE_STARS}}/$ts_stars/g" README.md
-          sed -i "s/{{TAILSCALE_FORKS}}/$ts_forks/g" README.md
-          sed -i "s/{{TAILSCALE_RELEASE}}/$ts_release/g" README.md
-          sed -i "s/{{TAILSCALE_STARS_COLOR}}/$ts_color/g" README.md
+          # Replace all placeholders with escaped values
+          sed -i "s/{{TAILSCALE_STARS}}/$safe_ts_stars/g" README.md
+          sed -i "s/{{TAILSCALE_FORKS}}/$safe_ts_forks/g" README.md
+          sed -i "s/{{TAILSCALE_RELEASE}}/$safe_ts_release/g" README.md
+          sed -i "s/{{TAILSCALE_STARS_COLOR}}/$safe_ts_color/g" README.md
           
-          sed -i "s/{{ADGUARD_STARS}}/$ag_stars/g" README.md
-          sed -i "s/{{ADGUARD_FORKS}}/$ag_forks/g" README.md
-          sed -i "s/{{ADGUARD_RELEASE}}/$ag_release/g" README.md
-          sed -i "s/{{ADGUARD_STARS_COLOR}}/$ag_color/g" README.md
+          sed -i "s/{{ADGUARD_STARS}}/$safe_ag_stars/g" README.md
+          sed -i "s/{{ADGUARD_FORKS}}/$safe_ag_forks/g" README.md
+          sed -i "s/{{ADGUARD_RELEASE}}/$safe_ag_release/g" README.md
+          sed -i "s/{{ADGUARD_STARS_COLOR}}/$safe_ag_color/g" README.md
           
-          sed -i "s/{{ACME_STARS}}/$acme_stars/g" README.md
-          sed -i "s/{{ACME_FORKS}}/$acme_forks/g" README.md
-          sed -i "s/{{ACME_STARS_COLOR}}/$acme_color/g" README.md
+          sed -i "s/{{ACME_STARS}}/$safe_acme_stars/g" README.md
+          sed -i "s/{{ACME_FORKS}}/$safe_acme_forks/g" README.md
+          sed -i "s/{{ACME_STARS_COLOR}}/$safe_acme_color/g" README.md
           
-          sed -i "s/{{FORUM_STARS}}/$forum_stars/g" README.md
-          sed -i "s/{{FORUM_FORKS}}/$forum_forks/g" README.md
-          sed -i "s/{{FORUM_STARS_COLOR}}/$forum_color/g" README.md
+          sed -i "s/{{FORUM_STARS}}/$safe_forum_stars/g" README.md
+          sed -i "s/{{FORUM_FORKS}}/$safe_forum_forks/g" README.md
+          sed -i "s/{{FORUM_STARS_COLOR}}/$safe_forum_color/g" README.md
           
-          sed -i "s/{{REACHABILITY_STARS}}/$reachability_stars/g" README.md
-          sed -i "s/{{REACHABILITY_FORKS}}/$reachability_forks/g" README.md
-          sed -i "s/{{REACHABILITY_STARS_COLOR}}/$reachability_color/g" README.md
+          sed -i "s/{{REACHABILITY_STARS}}/$safe_reachability_stars/g" README.md
+          sed -i "s/{{REACHABILITY_FORKS}}/$safe_reachability_forks/g" README.md
+          sed -i "s/{{REACHABILITY_STARS_COLOR}}/$safe_reachability_color/g" README.md
           
-          sed -i "s/{{FIRMWARE_STARS}}/$firmware_stars/g" README.md
-          sed -i "s/{{FIRMWARE_FORKS}}/$firmware_forks/g" README.md
-          sed -i "s/{{FIRMWARE_RELEASE}}/$firmware_release/g" README.md
-          sed -i "s/{{FIRMWARE_STARS_COLOR}}/$firmware_color/g" README.md
+          sed -i "s/{{FIRMWARE_STARS}}/$safe_firmware_stars/g" README.md
+          sed -i "s/{{FIRMWARE_FORKS}}/$safe_firmware_forks/g" README.md
+          sed -i "s/{{FIRMWARE_RELEASE}}/$safe_firmware_release/g" README.md
+          sed -i "s/{{FIRMWARE_STARS_COLOR}}/$safe_firmware_color/g" README.md
           
-          sed -i "s/{{TOTAL_STARS}}/$total_stars/g" README.md
-          sed -i "s/{{UPDATE_DATE}}/$update_date/g" README.md
+          sed -i "s/{{TOTAL_STARS}}/$safe_total_stars/g" README.md
+          sed -i "s/{{UPDATE_DATE}}/$safe_update_date/g" README.md
           
           echo "✅ README generated from template successfully"
       
