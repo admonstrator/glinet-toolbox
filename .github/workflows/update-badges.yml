@@ -47,6 +47,7 @@ jobs:
           get_repo_stats "glinet-enable-acme"
           get_repo_stats "glinet.forum"
           get_repo_stats "can-i-haz-reachability"
+          get_repo_stats "glinet-firmware-overview"
       
       - name: Generate README from template
         run: |
@@ -84,8 +85,13 @@ jobs:
           reachability_forks="${{ steps.stats.outputs.can-i-haz-reachability_forks }}"
           reachability_color=$(get_color $reachability_stars)
           
+          firmware_stars="${{ steps.stats.outputs.glinet-firmware-overview_stars }}"
+          firmware_forks="${{ steps.stats.outputs.glinet-firmware-overview_forks }}"
+          firmware_release="${{ steps.stats.outputs.glinet-firmware-overview_release }}"
+          firmware_color=$(get_color $firmware_stars)
+          
           # Calculate total stars
-          total_stars=$((ts_stars + ag_stars + acme_stars + forum_stars + reachability_stars))
+          total_stars=$((ts_stars + ag_stars + acme_stars + forum_stars + reachability_stars + firmware_stars))
           
           # Get current date
           update_date=$(date '+%Y-%m-%d')
@@ -115,6 +121,11 @@ jobs:
           sed -i "s/{{REACHABILITY_STARS}}/$reachability_stars/g" README.md
           sed -i "s/{{REACHABILITY_FORKS}}/$reachability_forks/g" README.md
           sed -i "s/{{REACHABILITY_STARS_COLOR}}/$reachability_color/g" README.md
+          
+          sed -i "s/{{FIRMWARE_STARS}}/$firmware_stars/g" README.md
+          sed -i "s/{{FIRMWARE_FORKS}}/$firmware_forks/g" README.md
+          sed -i "s/{{FIRMWARE_RELEASE}}/$firmware_release/g" README.md
+          sed -i "s/{{FIRMWARE_STARS_COLOR}}/$firmware_color/g" README.md
           
           sed -i "s/{{TOTAL_STARS}}/$total_stars/g" README.md
           sed -i "s/{{UPDATE_DATE}}/$update_date/g" README.md
@@ -164,6 +175,10 @@ jobs:
           echo "### Can I Haz Reachability?" >> $GITHUB_STEP_SUMMARY
           echo "- ⭐ Stars: ${{ steps.stats.outputs.can-i-haz-reachability_stars }}" >> $GITHUB_STEP_SUMMARY
           echo "- 🍴 Forks: ${{ steps.stats.outputs.can-i-haz-reachability_forks }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Firmware Overview" >> $GITHUB_STEP_SUMMARY
+          echo "- ⭐ Stars: ${{ steps.stats.outputs.glinet-firmware-overview_stars }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 🍴 Forks: ${{ steps.stats.outputs.glinet-firmware-overview_forks }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then

@@ -121,6 +121,28 @@ A professional tool to verify network reachability, TLS configurations, and fire
 
 ---
 
+### 📊 [GL.iNet Firmware Overview](https://github.com/Admonstrator/glinet-firmware-overview)
+
+[![Stars](https://img.shields.io/badge/stars-{{FIRMWARE_STARS}}-{{FIRMWARE_STARS_COLOR}}?style=flat-square)](https://github.com/Admonstrator/glinet-firmware-overview/stargazers) [![Forks](https://img.shields.io/badge/forks-{{FIRMWARE_FORKS}}-blue?style=flat-square)](https://github.com/Admonstrator/glinet-firmware-overview/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/Admonstrator/glinet-firmware-overview/blob/main/LICENSE)
+
+Automated dashboard and flat-file API for GL.iNet firmware tracking! Tracks latest firmware releases (RELEASE, BETA, SNAPSHOT, etc.) for all GL.iNet models with automated link verification.
+
+**🌐 Try it now:** [firmware.admon.me](https://admonstrator.github.io/glinet-firmware-overview/)
+
+**Key Features:**
+
+- 🚀 Automated daily updates for all GL.iNet models
+- 🔍 Automatic link validation (verifies downloads)
+- 📁 Machine-readable flat-file API for integration
+- 📊 Categorized dashboard with search functionality
+- ⚡ Real-time verification of firmware availability
+
+**Perfect for:** Firmware tracking, automated updates, developer integration
+
+[**→ Go to Firmware Overview**](https://github.com/Admonstrator/glinet-firmware-overview)
+
+---
+
 ### �💬 [GL.iNet Forum Collection](https://github.com/Admonstrator/glinet.forum)
 
 [![Stars](https://img.shields.io/badge/stars-{{FORUM_STARS}}-{{FORUM_STARS_COLOR}}?style=flat-square)](https://github.com/Admonstrator/glinet.forum/stargazers) [![Forks](https://img.shields.io/badge/forks-{{FORUM_FORKS}}-blue?style=flat-square)](https://github.com/Admonstrator/glinet.forum/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/Admonstrator/glinet.forum/blob/main/LICENSE)
@@ -173,6 +195,7 @@ All tools support GL.iNet routers with firmware 4.x, including:
 | [AdGuard Updater](https://github.com/Admonstrator/glinet-adguard-updater)         | {{ADGUARD_STARS}}⭐      | {{ADGUARD_FORKS}}🍴      | {{ADGUARD_RELEASE}}   | ✅ Active |
 | [ACME Manager](https://github.com/Admonstrator/glinet-enable-acme)                | {{ACME_STARS}}⭐         | {{ACME_FORKS}}🍴         | -                     | ✅ Active |
 | [Can I Haz Reachability?](https://github.com/Admonstrator/can-i-haz-reachability) | {{REACHABILITY_STARS}}⭐ | {{REACHABILITY_FORKS}}🍴 | -                     | ✅ Active |
+| [Firmware Overview](https://github.com/Admonstrator/glinet-firmware-overview)     | {{FIRMWARE_STARS}}⭐     | {{FIRMWARE_FORKS}}🍴     | -                     | ✅ Active |
 
 ### 🏆 Community Recognition
 
