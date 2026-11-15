@@ -38,7 +38,7 @@ All tools are developed with the GL.iNet community in mind, tested on real hardw
 
 ### 🦭 [Tailscale Updater](https://github.com/admonstrator/glinet-tailscale-updater)
 
-[![Stars](https://img.shields.io/badge/stars-817-brightgreen?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/stargazers) [![Forks](https://img.shields.io/badge/forks-58-blue?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/blob/main/LICENSE) [![Release](https://img.shields.io/badge/release-v1.104.5-blue?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/releases/latest)
+[![Stars](https://img.shields.io/badge/stars-829-brightgreen?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/stargazers) [![Forks](https://img.shields.io/badge/forks-58-blue?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/blob/main/LICENSE) [![Release](https://img.shields.io/badge/release-v1.104.7-blue?style=flat-square)](https://github.com/admonstrator/glinet-tailscale-updater/releases/latest)
 
 Keep Tailscale up-to-date on your GL.iNet router with ease! This script automatically fetches and installs the latest Tailscale version, optimized specifically for GL.iNet routers.
 
@@ -80,7 +80,7 @@ Keep AdGuard Home up-to-date on your GL.iNet router! This script updates the dee
 
 ### 🔐 [ACME Certificate Manager](https://github.com/admonstrator/glinet-enable-acme)
 
-[![Stars](https://img.shields.io/badge/stars-33-yellow?style=flat-square)](https://github.com/admonstrator/glinet-enable-acme/stargazers) [![Forks](https://img.shields.io/badge/forks-7-blue?style=flat-square)](https://github.com/admonstrator/glinet-enable-acme/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/admonstrator/glinet-enable-acme/blob/main/LICENSE)
+[![Stars](https://img.shields.io/badge/stars-34-yellow?style=flat-square)](https://github.com/admonstrator/glinet-enable-acme/stargazers) [![Forks](https://img.shields.io/badge/forks-6-blue?style=flat-square)](https://github.com/admonstrator/glinet-enable-acme/network) [![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](https://github.com/admonstrator/glinet-enable-acme/blob/main/LICENSE)
 
 Enable ACME (Automated Certificate Management Environment) for your GL.iNet router's DDNS domain. Get free, trusted SSL/TLS certificates automatically!
 
@@ -191,16 +191,16 @@ All tools support GL.iNet routers with firmware 4.x, including:
 
 | Project                                                                           | Stars                   | Forks                   | Latest Release        | Status   |
 | --------------------------------------------------------------------------------- | ----------------------- | ----------------------- | --------------------- | -------- |
-| [Tailscale Updater](https://github.com/admonstrator/glinet-tailscale-updater)     | 817⭐    | 58🍴    | v1.104.5 | ✅ Active |
+| [Tailscale Updater](https://github.com/admonstrator/glinet-tailscale-updater)     | 829⭐    | 58🍴    | v1.104.7 | ✅ Active |
 | [AdGuard Updater](https://github.com/admonstrator/glinet-adguard-updater)         | 164⭐      | 13🍴      | v0.107.80   | ✅ Active |
-| [ACME Manager](https://github.com/admonstrator/glinet-enable-acme)                | 33⭐         | 7🍴         | -                     | ✅ Active |
+| [ACME Manager](https://github.com/admonstrator/glinet-enable-acme)                | 34⭐         | 6🍴         | -                     | ✅ Active |
 | [Can I Haz Reachability?](https://github.com/admonstrator/can-i-haz-reachability) | 4⭐ | 1🍴 | -                     | ✅ Active |
 | [Firmware Overview](https://github.com/admonstrator/glinet-firmware-overview)     | 9⭐     | 1🍴     | -                     | ✅ Active |
 
 ### 🏆 Community Recognition
 
 - 🎖️ **GL.iNet Forum Moderator** – Active community leader
-- ⭐ **1027+ Combined GitHub Stars** – Trusted by the community
+- ⭐ **1040+ Combined GitHub Stars** – Trusted by the community
 - 🔧 **9+ Active Contributors** – Growing open-source project
 - 📝 **Featured in Forum** – Multiple highlighted threads
 - 🌍 **Global Reach** – Used by GL.iNet users worldwide
@@ -271,6 +271,6 @@ All projects in the GL.iNet Toolbox are licensed under the **MIT License** – s
 
 ⭐ If you find this useful, please star the repositories!
 
-*Last updated: 2026-11-08*
+*Last updated: 2026-11-15*
 
 </div>
